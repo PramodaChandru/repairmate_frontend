@@ -1,0 +1,44 @@
+.mat-toolbar-dark {
+  background-color: #343a40;
+  color: white;
+}
+
+.toolbar-link {
+  margin-right: 16px;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.toolbar-link.brand {
+  font-style: italic;
+}
+
+.toolbar-link:hover {
+  color: #ffdd57;
+}
+
+/* Spacer to push content to the right */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+/* Login button styling */
+button {
+  text-transform: capitalize;
+  border-color: white;
+  border-width: 4px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.welcome-text {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+  font-weight: 700;
+}

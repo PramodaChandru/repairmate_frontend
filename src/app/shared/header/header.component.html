@@ -1,0 +1,21 @@
+<header>
+    <mat-toolbar class="mat-toolbar-dark" color="primary">
+      <mat-toolbar-row>
+        <a routerLink="/" class="toolbar-link brand">Repair Mate</a>
+        <a routerLink="/all-services" class="toolbar-link">All Services</a>
+        <a routerLink="/find-nearby" class="toolbar-link">Find Nearby</a>
+        <a routerLink="/about-us" class="toolbar-link">About Us</a>
+
+        <span class="example-spacer"></span>
+        
+        
+        <button *ngIf="!isLoggedIn" mat-raised-button color="grey" [routerLink]="['/login']">Login</button>
+
+        <div *ngIf="isLoggedIn" class="user-info">
+          <p class="welcome-text">Welcome, {{username}}</p>
+          <button mat-raised-button color="grey" (click)="logout()">Logout</button>
+        </div>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </header>
