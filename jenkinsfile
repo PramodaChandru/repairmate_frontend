@@ -24,10 +24,19 @@ pipeline {
             }
         }
 
+        stage('Install Angular CLI') {
+            steps {
+                script {
+                    sh 'npm install -g @angular/cli@16'
+                }
+            }
+        }
+
+
         stage('Build Angular') {
             steps {
                 script {
-                    sh 'ng build --prod'
+                    sh 'ng build --configuration production'
                 }
             }
         }
