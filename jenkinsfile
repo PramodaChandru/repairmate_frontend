@@ -8,6 +8,15 @@ pipeline {
     }
 
     stages {
+        stage('Initialize') {
+            steps {
+                script {
+                    def dockerHome = tool 'mydocker'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                }
+            }
+        }
+
         stage('Checkout') {
             steps {
                 script {
@@ -39,11 +48,6 @@ pipeline {
                     sh 'ng build --configuration production'
                 }
             }
-        }
-
-        stage('Initialize'){
-            def dockerHome = tool 'mydocker'
-            env.PATH = "${dockerHome}/bin:${env.PATH}"
         }
 
         stage('Build Docker Image') {
